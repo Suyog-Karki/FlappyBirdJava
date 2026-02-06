@@ -106,8 +106,6 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
     void placePipes() {
         //(0-1) * pipeHeight/2.
-        // 0 -> -128 (pipeHeight/4)
-        // 1 -> -128 - 256 (pipeHeight/4 - pipeHeight/2) = -3/4 pipeHeight
         int randomPipeY = (int) (pipeY - pipeHeight/4 - Math.random()*(pipeHeight/2));
         int openingSpace = boardHeight/4;
 
@@ -242,7 +240,6 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            // System.out.println("JUMP!");
             velocityY = -9;
 
             if (gameOver) {
@@ -258,7 +255,6 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         }
     }
 
-    //not needed
     @Override
     public void keyTyped(KeyEvent e) {}
 
